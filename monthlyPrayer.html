@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Prayer Timings</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('./img/background.png'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            color: #00964f(125, 42, 42); /* Adjust text color for readability */
+        }
+        .table-container {
+            margin: 20px;
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background for readability */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .table-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .date-header {
+            background-color: #00964f; /* Green background */
+            color: white; /* White text for contrast */
+        }
+        .prayer-time-cell {
+            text-align: center;
+            color: black; /* Black text for contrast */
+        }
+        /* Button styling */
+        .home-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .btn-home {
+            background-color: #00964f; /* Green background */
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn-home:hover {
+            background-color: #007b3a; /* Darker green on hover */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to Home Button -->
+    <div class="home-button">
+        <button class="btn-home" onclick="goToHomePage()">Back to Home</button>
+    </div>
+
+    <div class="container">
+        <div class="table-container">
+            <div class="table-header">
+                <h2>Prayer Timings for the Month</h2>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="date-header">
+                        <th>Day</th>
+                        <th>Fajr Begins</th>
+                        <th>Iqamah</th>
+                        <th>Sunrise</th>
+                        <th>Dhuhr Begins</th>
+                        <th>Iqamah</th>
+                        <th>Asr Begins</th>
+                        <th>Iqamah</th>
+                        <th>Maghrib Begins</th>
+                        <th>Iqamah</th>
+                        <th>Isha Begins</th>
+                        <th>Iqamah</th>
+                    </tr>
+                </thead>
+                <tbody id="prayer-times-table-body">
+                    <!-- Rows will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Function to fetch prayer times from a JSON file
+        async function fetchPrayerTimesFromJson() {
+            try {
+                const response = await fetch('./prayer_timing.json'); // Path to your local JSON file
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error fetching prayer times from JSON:', error);
+                return null;
+            }
+        }
+
+        // Function to populate the table with prayer times for the month
+        async function populateTable() {
+            const tableBody = document.getElementById('prayer-times-table-body');
+            const prayerTimesData = await fetchPrayerTimesFromJson();
+
+            if (!prayerTimesData) {
+                console.error('Failed to load prayer times data.');
+                return;
+            }
+
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = today.getMonth() + 1; // Current month (add 1 because months are 0-indexed)
+            const daysInMonth = new Date(year, month, 0).getDate(); // Number of days in the current month
+
+            const monthKey = `Month_${month}`; // Key to get the current month's data
+            const monthData = prayerTimesData[monthKey];
+
+            if (!monthData) {
+                console.error('No data available for the current month.');
+                return;
+            }
+
+            // Loop through each day in the month and display the prayer timings
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayData = monthData.find(entry => entry.DATE == day);
+
+                if (dayData) {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${day}/${month}/${year}</td>
+                        <td class="prayer-time-cell">${dayData.Fajr}</td>
+                        <td class="prayer-time-cell">${dayData.Fajr_iqama}</td>
+                        <td class="prayer-time-cell">${dayData.Sunrise}</td>
+                        <td class="prayer-time-cell">${dayData.Duhar}</td>
+                        <td class="prayer-time-cell">${dayData.Duhar_iqama}</td>
+                        <td class="prayer-time-cell">${dayData.Asr}</td>
+                        <td class="prayer-time-cell">${dayData.Asr_iqama}</td>
+                        <td class="prayer-time-cell">${dayData.Maghrib}</td>
+                        <td class="prayer-time-cell">${dayData.Maghrib_iqama}</td>
+                        <td class="prayer-time-cell">${dayData.Isha}</td>
+                        <td class="prayer-time-cell">${dayData.Isha_iqama}</td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+            }
+        }
+
+        // Function to go back to the home page
+        function goToHomePage() {
+            window.location.href = './index.html'; // Update with your homepage path
+        }
+
+        // Populate the table with prayer times when the page loads
+        document.addEventListener('DOMContentLoaded', populateTable);
+    </script>
+</body>
+</html>

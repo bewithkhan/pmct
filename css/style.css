@@ -1,0 +1,1005 @@
+/* Root Color Variables */
+:root {
+    --bs-primary: #00964B; /* Replaced with the green color */
+    --bs-dark: #007B3A; /* A darker shade of green */
+}
+
+/*** Spinner Start ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .8s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .8s ease-out, visibility 0s linear .0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+.wow,
+.animated {
+    animation-duration: 2s !important;
+}
+
+/*** Spinner End ***/
+
+body {
+    background-image: url('img/background.png'); /* Update this path if your image is in a different location */
+    background-size: cover; /* Ensures the image covers the entire page */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center center; /* Centers the background image */
+    background-attachment: fixed; /* Keeps the background image fixed in place while scrolling */
+    background-color: #ffffff; /* Fallback color if the image doesn't load */
+}
+
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    z-index: 99;
+}
+
+.back-to-top:hover {
+    background: var(--bs-dark);
+    color: var(--bs-primary);
+}
+
+h1, h2, h3, .h1, .h2, .h3 {
+    font-weight: 700 !important;
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+h4, h5, h6, .h4, .h5, .h6 {
+    font-weight: 600 !important;
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+.py-6 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+/*** Button Start ***/
+.btn {
+    font-weight: 600;
+    transition: .5s;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-md-square {
+    width: 46px;
+    height: 46px;
+}
+
+.btn-lg-square {
+    width: 58px;
+    height: 58px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-md-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+/* Primary Button - Green */
+.btn.btn-primary {
+    background-color: #00964f; /* Green color */
+    border-color: #00964f; /* Green color */
+    color: white;
+}
+
+.btn.btn-primary:hover {
+    color: black !important;
+    background: #cccccc !important; /* Grey hover color */
+    border-color: #cccccc !important; /* Grey hover color */
+}
+
+/* Dark Button - Green */
+.btn.btn-dark {
+    color: white;
+    background: #007B3A !important; /* Green background */
+    border-color: #007B3A !important; /* Green border */
+}
+
+.btn.btn-dark:hover {
+    color: #00964f !important;
+    background: #cccccc !important; /* Grey hover color */
+    border-color: #cccccc !important; /* Grey hover color */
+}
+/*** Button End ***/
+/*** Topbar Start ***/
+.topbar,
+.navbar {
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+/* Further reduce padding to make the topbar thinner */
+.topbar {
+    padding: 2px 0; /* Very small padding to reduce height */
+    font-size: 14px; /* Keep font size consistent */
+}
+
+/* Solid background when scrolled */
+.topbar.scrolled,
+.navbar.scrolled {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+/* Text color adjustment for the transparent state */
+.topbar a,
+.navbar .navbar-nav .nav-link {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+/* Text color when scrolled */
+.topbar.scrolled a,
+.navbar.scrolled .navbar-nav .nav-link {
+    color: #2a2a2a; /* Dark grey */
+}
+
+.topbar a:hover,
+.navbar .navbar-nav .nav-link:hover {
+    color: #006f44; /* Dark green hover effect */
+}
+
+.btn-primary {
+    background-color: #006f44;
+    border-color: #006f44;
+    color: #ffffff;
+    padding: 5px 15px; /* Adjusted button padding to fit in the thinner topbar */
+}
+
+.btn-primary:hover {
+    background-color: #004d33;
+    border-color: #004d33;
+}
+
+/*** Topbar Start ***/
+.topbar {
+    padding: 2px 0; /* Very minimal padding for a thinner topbar */
+    margin-bottom: 0px; /* Ensure no margin below the topbar */
+}
+
+/* Solid background when scrolled */
+.topbar.scrolled,
+.navbar.scrolled {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+/* Text color adjustment for the transparent state */
+.topbar a,
+.navbar .navbar-nav .nav-link {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+/* Text color when scrolled */
+.topbar.scrolled a,
+.navbar.scrolled .navbar-nav .nav-link {
+    color: #2a2a2a; /* Dark grey */
+}
+
+.topbar a:hover,
+.navbar .navbar-nav .nav-link:hover {
+    color: #006f44; /* Dark green hover effect */
+}
+
+/*** Navbar Start ***/
+.navbar {
+    padding: 5px 0; /* Minimal padding for a thinner navbar */
+    margin: 0; /* Removed any margin that might cause extra space */
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+}
+
+.navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+/* Adjusting the size of the logo */
+.navbar-icon {
+    height: 50px; /* Reduced logo height */
+    width: auto;
+}
+
+/* Adjust the nav link padding to remove more space */
+.navbar .navbar-nav .nav-link {
+    padding: 5px 10px; /* Reduced padding for a compact appearance */
+    color: var(--bs-dark);
+    font-size: 20px; /* Keep font size */
+    font-weight: 700;
+    transition: .5s;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--bs-primary);
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+/* Navbar toggler */
+.navbar-toggler {
+    background: var(--bs-secondary);
+    color: var(--bs-light) !important;
+    padding: 5px 10px;
+    border: 2px solid var(--bs-primary) !important;
+    box-shadow: none !important;
+}
+
+/*** Additional Space Removal ***/
+
+/* General reset to remove padding/margin between topbar and navbar */
+.topbar,
+.navbar {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    border: none !important;
+}
+
+
+
+/*** Hero Header ***/
+.hero-header {
+    margin-bottom: 4rem; /* Reduce bottom margin */
+    padding-top: 10rem; /* Reduce top padding */
+    padding-bottom: 4rem; /* Reduce bottom padding */
+    background: url("../img/main.png"), center center no-repeat;
+    background-size: cover;
+}
+
+.hero-header .hero-header-inner {
+    padding: 2rem; /* Reduce inner padding */
+    background: rgba(255, 255, 255, .5);
+}
+
+@media (max-width: 992px) {
+    .hero-header {
+        padding-top: 8rem; /* Adjust for smaller screens */
+    }
+}
+
+/*** About Start ***/
+.about a.btn.btn-light:hover {
+    background: var(--bs-dark) !important;
+    color: var(--bs-primary) !important;
+    border: 0;
+}
+/*** About End ***/
+
+/*** Activities Start ***/
+.activities .activities-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 45px rgba(12, 18, 20, .08);
+    transition: 0.5s;
+}
+
+.activities .activities-item:hover {
+    background: var(--bs-primary) !important;
+    color: var(--bs-dark) !important;
+}
+
+/* Hover effect for changing text inside the blocks to black */
+.activities .activities-item:hover h4,
+.activities .activities-item:hover p {
+    color: #000 !important; /* Change text color to black on hover */
+}
+
+.activities .activities-item:hover a {
+    background: var(--bs-light) !important;
+    color: var(--bs-dark) !important;
+}
+
+.activities .activities-item:hover a:hover {
+    background: var(--bs-dark) !important;
+    color: var(--bs-primary) !important;
+}
+
+/* Smooth transition */
+.activities .activities-item h4,
+.activities .activities-item p {
+    transition: color 0.3s ease-in-out;
+}
+/*** Activities End ***/
+
+
+/*** Events Start ***/
+.event-item img {
+    transition: 0.5s;
+}
+
+.event .event-item a {
+    transition: 0.5s;
+}
+
+.event-item:hover img {
+    transition: 0.5s;
+    transform: scale(1.2)
+}
+
+.event-item a:hover {
+    background: var(--bs-dark);
+    color: var(--bs-primary);
+    opacity: 0.5s;
+}
+/*** Events End ***/
+
+/*** Sermon Start ***/
+.sermon .sermon-item {
+    height: 100%;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+}
+
+.sermon-item img {
+    transition: 0.5s;
+}
+
+.sermon-item:hover img {
+    transform: scale(1.2)
+}
+
+.sermon-item .sermon-meta a,
+.sermon-item .sermon-meta a i {
+    transition: 0.5s;
+}
+
+.sermon-item .sermon-meta a:hover,
+.sermon-item .sermon-meta a i:hover {
+    color: var(--bs-primary) !important;
+}
+/*** Sermon End ***/
+
+/*** Blog Start ***/
+.blog-item {
+    height: 100%;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+}
+
+.blog-item img {
+    transition: 0.5s;
+}
+
+.blog-item:hover img {
+    transform: scale(1.2)
+}
+
+.blog-item .blog-meta a,
+.blog-item .blog-meta a i {
+    transition: 0.5s;
+}
+
+.blog-item .blog-meta a:hover,
+.blog-item .blog-meta a i:hover {
+    color: var(--bs-primary) !important;
+}
+/*** Blog End ***/
+
+/*** Team Start ***/
+.team .team-img {
+    height: 100%;
+    padding: 25px;
+    background: var(--bs-white);
+    overflow: hidden;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+}
+
+.team .team-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team .team-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.team .team-item img {
+    transition: 0.5s;
+}
+
+.team .team-item:hover img {
+    transform: scale(1.2);
+}
+
+.team .team-item .team-content {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   padding: 15px;
+   transform: translateX(-50%, -50%);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   opacity: 0;
+   transition: 0.5s;
+}
+
+.team .team-item:hover .team-content {
+    opacity: 1;
+    background: rgba(0, 150, 75, .7); /* Updated to green */
+}
+/*** Team End ***/
+
+/*** Testimonial Start ***/
+.testimonial-item {
+    background: var(--bs-light);
+    padding: 40px;
+}
+
+.testimonial-carousel .owl-item img {
+    width: 100px;
+    height: 100px;
+}
+
+.testimonial-carousel {
+    position: relative;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.testimonial-carousel .owl-nav .owl-prev,
+.testimonial-carousel .owl-nav .owl-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    background: var(--bs-primary); /* Updated to green */
+    color: var(--bs-dark);
+    font-size: 22px;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-nav .owl-prev:hover {
+    background: var(--bs-dark) !important;
+    color: var(--bs-primary) !important;
+}
+
+.testimonial-carousel .owl-nav .owl-next {
+    left: auto;
+    right: 0px;
+}
+
+.testimonial-carousel .owl-nav .owl-next:hover {
+    background: var(--bs-dark) !important;
+    color: var(--bs-primary) !important;
+}
+/*** Testimonial End ***/
+
+/*** Footer Start ***/
+.footer {
+    margin-top: 6rem;
+    background: #f5f5f5; /* Updated to grey background */
+    padding: 2rem 0;
+}
+
+.footer .footer-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333; /* Ensuring the text is dark grey */
+}
+
+.footer .border-top,
+.footer .border-bottom {
+    border-color: rgba(0, 0, 0, .08) !important; /* Updated to a darker grey */
+}
+
+.footer button {
+    border: 0;
+    transition: 0.5s;
+}
+
+.footer button:hover {
+    background: #333; /* Dark grey hover */
+    color: #f5f5f5; /* Matching the background */
+}
+
+.footer-item a.btn.btn-light:hover {
+    background: #00964f; /* Green background for hover */
+    color: #f5f5f5 !important; /* Grey text color */
+    border: #00964f; /* Green border */
+}
+
+.footer-item a,
+.footer-item a i {
+    transition: 0.5s;
+}
+
+.footer-item a:hover,
+.footer-item a i:hover {
+    color: #00964f !important; /* Green hover effect */
+}
+
+/* New styles for footer items alignment */
+.footer-item {
+    margin-top: 20px;
+}
+
+.footer-item h4 {
+    margin-bottom: 20px;
+    color: #333; /* Ensuring header text is dark grey */
+}
+
+.footer-item a {
+    color: #333; /* Ensuring link text is dark grey */
+    text-decoration: none;
+}
+
+.footer-item a:hover {
+    color: #00964f; /* Green hover effect */
+}
+
+.btn-square {
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00964f; /* Green background */
+    border-radius: 50%;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-square i {
+    color: #333; /* Dark grey icon color */
+}
+
+.btn-square:hover {
+    background-color: #333; /* Dark grey background on hover */
+    color: #00964f; /* Green icon on hover */
+}
+
+/* Ensure content alignment and reduction of empty space */
+.footer-inner .d-flex {
+    align-items: start;
+    justify-content: space-between;
+}
+
+.footer-inner .d-flex .btn-square {
+    margin-right: 15px;
+}
+
+.footer-inner .d-flex .text-body {
+    font-size: 16px;
+    color: #333; /* Ensure the text color is dark grey */
+}
+
+.footer-inner .col-xl-6 {
+    max-width: 100%; /* Ensuring it takes up necessary space */
+}
+/*** Footer End ***/
+
+
+/*** Enhanced styles for "Donate Now" section ***/
+.donate-section {
+    text-align: center;
+    padding: 3rem;
+    background: linear-gradient(135deg, #e0ffe0, #c6f7c6);
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+/* Headings */
+.donate-section h2, 
+.donate-section h3 {
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #006f44;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);  /* Subtle text shadow for vibrancy */
+}
+
+/* Main heading */
+.donate-section h2 {
+    font-size: 2.5rem;
+    color: #004d33; /* Dark green for vibrancy */
+}
+
+/* Subheading */
+.donate-section h3 {
+    font-size: 1.8rem;
+    color: #007B3A; /* Slightly lighter green for subheadings */
+}
+
+/* Arabic Text */
+.arabic-text {
+    font-family: 'Traditional Arabic', serif;
+    font-size: 1.7rem;  /* Increased font size for vibrancy */
+    line-height: 2.2;
+    direction: rtl;
+    text-align: right;
+    margin-bottom: 1.5rem;
+    color: #008f5e; /* Brighter green for Arabic text */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Slight shadow for vibrancy */
+}
+
+/* English Translation */
+.english-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4rem; /* Slightly larger font */
+    line-height: 1.9;
+    text-align: justify;
+    margin-bottom: 1.5rem;
+    color: #007acc; /* Vibrant blue for translation */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Text shadow for more emphasis */
+}
+
+/* Reference */
+.reference {
+    font-size: 1.1rem;
+    color: #555;
+    text-align: left;
+    font-style: italic;
+    margin-bottom: 2rem;
+    color: #333; /* Darker grey for better readability */
+}
+
+/* Paragraph Text */
+.donate-section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+/* Icons in donation section */
+.custom-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* Donation Card Styles */
+.donate-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.donate-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Headings for Donation Cards */
+.donate-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #00964f;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Donation Card Text */
+.donate-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Icons in Donation Cards */
+.donate-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+/* General Donate Section Enhancements */
+.donate-options {
+    margin-top: 40px;
+}
+
+.donate-options .col-lg-4 {
+    margin-bottom: 30px;
+}
+
+/* Button Styles (Optional) */
+.donate-btn {
+    background-color: #00964f;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.donate-btn:hover {
+    background-color: #007B3A;
+    color: white;
+}
+
+
+/* prayer timing */
+/* Prayer Schedule Section Styling */
+/* Main container for the prayer schedule */
+#prayer-schedule {
+    margin-top: 2rem;
+}
+
+.prayer-schedule {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.verse-hadith {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-right: 2rem;
+}
+
+.verse-hadith h2,
+.prayer-schedule h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+/* Verse of the Day Section Styling */
+.verse-hadith blockquote {
+    font-style: italic;
+    margin: 0;
+}
+
+/* Arabic text styling */
+.verse-hadith blockquote p:first-of-type {
+    font-size: 1.5em;
+    text-align: right;
+    color: #006f44; /* Green color for Arabic text */
+}
+
+/* English translation styling */
+.verse-hadith blockquote p:nth-of-type(2) {
+    color: #0066cc; /* Blue color for translation */
+}
+
+/* Footer for verse reference */
+.verse-hadith blockquote footer {
+    color: #333;
+}
+
+.date-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.date-section span {
+    font-size: 16px;
+    color: #555;
+}
+
+.next-iqamah {
+    background-color: #f0f9f5;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.daily-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.info-item {
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.info-item img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.info-item .info-title {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.info-item .info-time {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Prayer Times Table Styling */
+.prayer-times-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.prayer-times-table th,
+.prayer-times-table td {
+    text-align: center;
+    padding: 10px;
+    color: #000; /* Change text color to black */
+}
+
+.prayer-times-table th {
+    background-color: #f1f1f1;
+    color: #000; /* Ensure header text is also black */
+}
+
+.prayer-times-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Button and Icon Styling */
+.btn-outline-primary-custom {
+    border: 1px solid #006f44;
+    color: #006f44;
+    margin: 0 5px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.btn-outline-primary-custom:hover {
+    background-color: #006f44;
+    color: white;
+}
+
+.arrow-icon {
+    font-size: 1.5rem;
+    color: #006f44;
+}
+
+.btn-outline-primary-custom:hover .arrow-icon {
+    color: white;
+}
+
+
+/* juma time   */
+
+.jummah-times {
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #333;
+    text-align: left;
+}
+
+
+/* pillars */
+
+/* Container styling */
+.container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* Make the heading dynamic with animations */
+.animated-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    animation: text-zoom 3s ease-in-out infinite alternate;
+}
+
+@keyframes text-zoom {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+/* Image styling */
+.pillars-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.dynamic-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Image hover effect */
+.dynamic-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Message paragraph styling */
+.dynamic-message {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.8;
+    animation: fadeInMessage 2s ease-out;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@keyframes fadeInMessage {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .animated-text {
+        font-size: 2rem;
+    }
+    .dynamic-message {
+        font-size: 1.1rem;
+    }
+}
+
+
+

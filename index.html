@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="./prayerTiming.js"></script>
+
+<head>
+    <meta charset="utf-8">
+    <title>PMCT - Paisley Mosque</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Topbar Start -->
+    <div class="container-fluid fixed-top">
+        <div class="container topbar d-none d-lg-block">
+            <div class="topbar-inner d-flex justify-content-between align-items-center py-2">
+                <div class="d-flex">
+                    <div class="h-100 d-inline-flex align-items-center me-4">
+                        <span class="fa fa-phone-alt me-2"></span>
+                        <a href="tel:+01415622951"><span>0141 562 2951</span></a>
+                    </div>
+                    <div class="h-100 d-inline-flex align-items-center">
+                        <span class="far fa-envelope me-2"></span>
+                        <a href="mailto:info@pmct.com"><span>info@pmct.com</span></a>
+                    </div>
+                </div>
+                <div>
+                    <a href="https://www.google.com/maps/place/Paisley+Central+Mosque/@55.8445387,-4.4758907,13z/data=!4m10!1m2!2m1!1spasiley+mosque!3m6!1s0x48884945fa2c7105:0x5778639076d5d991!8m2!3d55.8445387!4d-4.434692!15sCg5wYXNpbGV5IG1vc3F1ZVoQIg5wYXNpbGV5IG1vc3F1ZZIBBm1vc3F1ZZoBI0NoWkRTVWhOTUc5blMwVkpRMEZuU1VOV2IyVklMVXBuRUFF4AEA!16s%2Fg%2F12hnwp8bg?entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-primary btn-sm">Location</a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="container">
+            <nav class="navbar navbar-light navbar-expand-lg py-3">
+                <a href="index.html" class="navbar-brand">
+                    <img src="img/icon.png" alt="Paisley Mosque" class="navbar-icon" style="height: 50px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars text-primary"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-lg-auto mx-xl-auto">
+                        <a href="#prayer-schedule" class="nav-item nav-link active">Prayer Timing</a>
+                        <a href="#about" class="nav-item nav-link">About</a>
+                        <a href="#services" class="nav-item nav-link">Services</a>
+                        <a href="#contact" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <a href="#donate" class="btn btn-primary py-2 px-4 d-none d-xl-inline-block">Donate</a>
+                </div>
+                
+            </nav>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <script>
+        window.addEventListener('scroll', function () {
+            var topbar = document.querySelector('.topbar');
+            var navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                topbar.classList.add('scrolled');
+                navbar.classList.add('scrolled');
+            } else {
+                topbar.classList.remove('scrolled');
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+<!-- Hero Start -->
+<div class="container-fluid hero-header" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <div class="container text-center">
+        <div class="row">
+            <!-- Hero Text Section -->
+            <div class="col-lg-12">
+                <div class="hero-header-inner animated zoomIn">
+                    <!-- Adjust the size of both the Welcome and Purity text -->
+                    
+                    <h1 class="display-4 mb-5 text-dark">PAISLEY MUSLIM COMMUNITY TRUST</h1>
+                    <p class="fs-1 text-dark">Purity Comes From Faith</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hero End -->
+<!-- Prayer Schedule and verse hadith Section -->
+<div class="container-fluid py-5" id="prayer-schedule">
+    <div class="container py-5">
+        <div class="row">
+            <!-- Verse and Hadith of the Day Section -->
+<div class="col-lg-6">
+    <div class="verse-hadith">
+        <h2>Verse of the Day</h2>
+        <blockquote id="verse-text">
+            <p>Loading verse...</p>
+            <footer>- Quran</footer>
+        </blockquote>
+
+        <h2>Hadith of the Day</h2>
+        <blockquote id="hadith-text">
+            <p>Loading hadith...</p>
+            <footer>- Hadith</footer>
+        </blockquote>
+    
+    </div>
+    <!-- Jumma'ah Times Section -->
+    <div class="jummah-times">
+        <p>First Jumma'ah starts at 01:30 PM</p>
+        <p>Second Jumma'ah starts at 02:30 PM</p>
+    </div>
+</div>
+
+
+            <!-- Prayer Schedule Section -->
+            <div class="col-lg-6">
+                <div class="prayer-schedule">
+                    <div class="header d-flex justify-content-between align-items-center">
+                        <h2 class="text-muted">Prayers Times</h2>
+                        <div class="d-flex align-items-center">
+                            <button id="prev-date" class="btn-icon btn-outline-primary-custom">
+                                <i class="arrow-icon fas fa-chevron-left"></i>
+                            </button>
+                            <div id="date-section" class="mx-2 text-center">
+                                <span id="current-day">Wednesday, September 4, 2024</span>
+                                <br>
+                                <span id="islamic-date" class="text-muted">Hijri Date</span>
+                            </div>
+                            <button id="next-date" class="btn-icon btn-outline-primary-custom">
+                                <i class="arrow-icon fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- <div class="next-iqamah bg-light p-3 rounded d-flex justify-content-between align-items-center mt-4">
+                        <span class="text-muted">Next Iqamah</span>
+                        <div>
+                            <strong id="next-prayer-name">Dhuhr</strong>
+                            <span>at <strong id="next-prayer-time">22:00 PM</strong></span>
+                        </div>
+                    </div> -->
+                    <div class="next-iqamah bg-light p-3 rounded d-flex justify-content-between align-items-center mt-4">
+                        <!-- <span class="text-muted">Next Iqamah</span>
+                        <div>
+                            <strong id="next-prayer-name">Dhuhr</strong>
+                            <span>at <strong id="next-prayer-time">22:00 PM</strong></span>
+                        </div> -->
+                        <button class="btn btn-primary" onclick="location.href='monthlyPrayer.html'">Month Prayer Time</button>
+                    </div>
+                    
+                    <div class="row text-center mt-4">
+                        <div class="col">
+                            <div class="info-item card p-2">
+                                <img src="./img/suhoor.png" alt="Suhur" />
+                                <span class="info-title">Suhur</span>
+                                <span id="suhur-time" class="info-time">05:00 AM</span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="info-item card p-2">
+                                <img src="./img/sunrise.png" alt="Sunrise" />
+                                <span class="info-title">Sunrise</span>
+                                <span id="sunrise-time" class="info-time">12:29 AM</span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="info-item card p-2">
+                                <img src="./img/sunset.png" alt="Sunset" />
+                                <span class="info-title">Sunset</span>
+                                <span id="sunset-time" class="info-time">07:03 PM</span>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="info-item card p-2">
+                                <img src="./img/iftar.png" alt="Iftar" />
+                                <span class="info-title">Iftar</span>
+                                <span id="iftar-time" class="info-time">18:04 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <table class="prayer-times-table table mt-4">
+                        <thead>
+                            <tr>
+                                <th>Prayer Name</th>
+                                <th>Prayer Time</th>
+                                <th>Iqamah Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fajr</td>
+                                <td id="fajr-time">05:00 AM</td>
+                                <td id="fajr-iqamah">05:30 AM</td>
+                            </tr>
+                            <tr>
+                                <td>Dhuhr</td>
+                                <td id="dhuhr-time">01:17 PM</td>
+                                <td id="dhuhr-iqamah">02:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Asr</td>
+                                <td id="asr-time">04:55 PM</td>
+                                <td id="asr-iqamah">05:15 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Maghrib</td>
+                                <td id="maghrib-time">08:04 PM</td>
+                                <td id="maghrib-iqamah">08:04 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Isha</td>
+                                <td id="isha-time">09:32 PM</td>
+                                <td id="isha-iqamah">10:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Jumu'ah</td>
+                                <td id="jumuah-time..">1st Jumuah 01:30 PM</td>
+                                <td id="jumuah-iqamah..">2nd Jumuah 02:30 PM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Prayer Schedule Section -->
+
+
+
+    <!-- About Start -->
+    <div class="container-fluid about py-5">
+        <div class="container py-5">
+            <div class="row g-5 mb-5" id="about">
+                <div class="col-xl-6">
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <img src="./img/icon.png" class="img-fluid pb-3 wow zoomIn" data-wow-delay="0.1s" alt="">
+                            <img src="./img/main.png" class="img-fluid pb-3 wow zoomIn" data-wow-delay="0.1s" alt="">
+                            <img src="./img/11.jpg" class="img-fluid pb-3 wow zoomIn" data-wow-delay="0.1s" alt="">
+                            
+                        </div>
+                        <div class="col-6">
+                            <img src="./img/3.jpg" class="img-fluid pb-3 wow zoomIn" data-wow-delay="0.1s" alt="">
+                            <img src="./img/22.jpg" class="img-fluid pt-3 wow zoomIn" data-wow-delay="0.1s" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="display-5 pb-4 m-0">Allah Helps Those Who Help Themselves</h1>
+                    <p class="pb-4">Paisley Muslim Community Trust (PMCT) is situated in the city center, 600 meters from the high street and 250 meters from the University of the West of Scotland (UWS). PMCT serves the community in and around Paisley. The mosque has a capacity of around 200, with a separate ladies' section. It is well equipped with separate male and female wudu areas and toilets.</p>
+                    <p class="pb-4">PMCT is a registered charity (no SC044603) with the following aims:
+                        <ul>
+                            <li>The advancement of education and religion.</li>
+                            <li>The promotion of religion or racial harmony.</li>
+                            <li>Assistance to the needy.</li>
+                        </ul>
+                        PMCT provides facilities for regular five-time prayers, Quran teaching five days per week for children, and separate Quran teaching for ladies in beginner and advanced groups.
+                    </p>
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6">
+                            <div class="ps-3 d-flex align-items-center justify-content-start">
+                                <span class="bg-primary btn-md-square rounded-circle mt-4 me-2"><i class="fa fa-eye text-dark fa-4x mb-5 pb-2"></i></span>
+                                <div class="ms-4">
+                                    <h5>Our Vision</h5>
+                                    <p>To be a unifying center of faith and community.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="ps-3 d-flex align-items-center justify-content-start">
+                                <span class="bg-primary btn-md-square rounded-circle mt-4 me-2"><i class="fa fa-flag text-dark fa-4x mb-5 pb-2"></i></span>
+                                <div class="ms-4">
+                                    <h5>Our Mission</h5>
+                                    <p>To foster spiritual growth and serve the community with compassion and inclusivity.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-light p-3 mb-4">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-3">
+                                <img src="img/about-child.jpg" class="img-fluid rounded-circle" alt="">
+                            </div>
+                            <div class="col-3">
+                                <h2 class="mb-0 text-primary text-center">£2004.46</h2>
+                                <h5 class="mb-0 text-center">Raised</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-2">
+                        <div class="col-md-6">
+                            <p class="mb-2"><i class="fa fa-check text-primary me-3"></i>Charity & Donation</p>
+                            <p class="mb-0"><i class="fa fa-check text-primary me-3"></i>Parent Education</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="mb-2"><i class="fa fa-check text-primary me-3"></i>Hadith & Sunnah</p>
+                            <p class="mb-0"><i class="fa fa-check text-primary me-3"></i>Mosque Development</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="container text-center py-5 wow fadeIn mb-4" data-wow-delay="0.1s" style="background-color: #00964f;">
+                <div class="row g-4 align-items-center justify-content-center">
+                    <div class="col-lg-7 d-flex justify-content-center align-items-center">
+                        <h1 class="mb-0 animated-text" style="color: white;">
+                            Every Muslim Needs To Realise The Importance Of The "Pillars" Of Islam
+                        </h1>
+                    </div>
+                </div>
+                <div class="row g-4 align-items-center justify-content-center mt-4">
+                    <div class="col-lg-8">
+                        <div class="pillars-image-container">
+                            <img src="./img/pillars.png" alt="Five Pillars of Islam" class="img-fluid dynamic-image">
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4 justify-content-center mt-4">
+                    <div class="col-md-10">
+                        <p class="dynamic-message" style="color: white;">
+                            The Five Pillars of Islam form the foundation of a Muslim's life. By embodying these principles, one ensures that their life revolves around faith, prayer, and commitment to the greater good.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            
+
+            <div id="donate" class="container donate-section">
+                <div class="text-center">
+                    <h2 class="donate-heading">DONATE NOW</h2>
+                    <p class="arabic-text">
+                        إِنَّ رَبَّكَ يَعْلَمُ أَنَّكَ تَقُومُ أَدْنَىٰ مِن ثُلُثَىِ ٱلَّيْلِ وَنِصْفَهُۥ وَثُلُثَهُۥ وَطَآئِفَةٌۭ مِّنَ ٱلَّذِينَ مَعَكَ ۚ وَٱللَّهُ يُقَدِّرُ ٱلَّيْلَ وَٱلنَّهَارَ ۚ عَلِمَ أَن لَّن تُحْصُوهُ فَتَابَ عَلَيْكُمْ ۖ فَٱقْرَءُوا۟ مَا تَيَسَّرَ مِنَ ٱلْقُرْءَانِ ۚ عَلِمَ أَن سَيَكُونُ مِنكُم مَّرْضَىٰ ۙ وَءَاخَرُونَ يَضْرِبُونَ فِى ٱلْأَرْضِ يَبْتَغُونَ مِن فَضْلِ ٱللَّهِ ۙ وَءَاخَرُونَ يُقَـٰتِلُونَ فِى سَبِيلِ ٱللَّهِ ۖ فَٱقْرَءُوا۟ مَا تَيَسَّرَ مِنْهُ ۚ وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ وَأَقْرِضُوا۟ ٱللَّهَ قَرۡضًا حَسَنًۭا ۚ وَمَا تُقَدِّمُوا۟ لِأَنفُسِكُم مِّنْ خَيْرٍۢ تَجِدُوهُ عِندَ ٱللَّهِ هُوَ خَيْرًۭا وَأَعْظَمَ أَجۡرًۭا ۚ وَٱسۡتَغۡفِرُواْ ٱللَّهَ ۖ إِنَّ ٱللَّهَ غَفُورٌۭ رَّحِيمٌۢ٠
+                    </p>
+                    <p class="english-text">
+                        Indeed, your Lord knows, [O Muhammad], that you stand [in prayer] almost two thirds of the night or half of it or a third of it, and [so do] a group of those with you. And Allah determines [the extent of] the night and the day. He has known that you [Muslims] will not be able to do it and has turned to you in forgiveness, so recite what is easy [for you] of the Qur'an. He has known that there will be among you those who are ill and others traveling throughout the land seeking [something] of the bounty of Allah and others fighting for the cause of Allah . So recite what is easy from it and establish prayer and give zakah and loan Allah a goodly loan. And whatever good you put forward for yourselves - you will find it with Allah . It is better and greater in reward. And seek forgiveness of Allah . Indeed, Allah is Forgiving and Merciful. 
+                    </p>
+                    <p class="reference">Ref: Surah Al-Muzzammil - 20</p>
+                </div>
+            
+                <div class="donate-options row">
+                    <div class="col-lg-4">
+                        <div class="donate-card">
+                            <img src="img/bank.png" alt="Bank Icon" class="donate-icon">
+                            <h3>Bank Details</h3>
+                            <p>A/C no.06036059<br>Sort code: 80-91-27</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="donate-card">
+                            <img src="img/charity.png" alt="Charity Box Icon" class="donate-icon">
+                            <h3>Charity Box</h3>
+                            <p>A charity box is placed in the mosque for contributions. Your generous donations support mosque expansion, running expenses, and the madrasa.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="donate-card">
+                            <img src="img/inPerson.png" alt="In Person Icon" class="donate-icon">
+                            <h3>In Person</h3>
+                            <p>You can donate in person via cheque/cash by contacting the administration.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- services Start -->
+<div class="container-fluid activities py-5" id="services">
+    <div class="container py-5">
+        <div class="mx-auto text-center mb-5 wow fadeIn" data-wow-delay="0.1s" style="max-width: 700px;">
+            <h1 class="display-3">Our Services</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-6 col-xl-4">
+                <div class="activities-item p-4 wow fadeIn" data-wow-delay="0.1s">
+                    <i class="fa fa-mosque fa-4x text-dark"></i>
+                    <div class="ms-4">
+                        <h4>Mosque Development</h4>
+                        <p class="mb-4">Our commitment to mosque development ensures that our place of worship remains a vibrant and welcoming space for all, continuously improving to meet the needs of our growing community.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xl-4">
+                <div class="activities-item p-4 wow fadeIn" data-wow-delay="0.3s">
+                    <i class="fa fa-donate fa-4x text-dark"></i>
+                    <div class="ms-4">
+                        <h4>Charity & Donation</h4>
+                        <p class="mb-4">Through your generous donations, we support vital community services and provide assistance to those in need, embodying the spirit of charity and compassion in Islam.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xl-4">
+                <div class="activities-item p-4 wow fadeIn" data-wow-delay="0.5s">
+                    <i class="fa fa-quran fa-4x text-dark"></i>
+                    <div class="ms-4">
+                        <h4>Quran Learning</h4>
+                        <p class="mb-4">We offer comprehensive Quranic learning programs for all ages, fostering a deep connection with the Holy Quran and promoting a lifelong journey of spiritual growth.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xl-4">
+                <div class="activities-item p-4 wow fadeIn" data-wow-delay="0.1s">
+                    <i class="fa fa-book fa-4x text-dark"></i>
+                    <div class="ms-4">
+                        <h4>Hadith & Sunnah</h4>
+                        <p class="mb-4">Our teachings focus on the Hadith and Sunnah, guiding our community to live by the example of the Prophet Muhammad (PBUH) in every aspect of life.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xl-4">
+                <div class="activities-item p-4 wow fadeIn" data-wow-delay="0.3s">
+                    <i class="fa fa-book-open fa-4x text-dark"></i>
+                    <div class="ms-4">
+                        <h4>Parent Education</h4>
+                        <p class="mb-4">We empower parents with the knowledge and skills to raise children grounded in Islamic values, ensuring the next generation thrives in faith and character.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xl-4">
+                <div class="activities-item p-4 wow fadeIn" data-wow-delay="0.5s">
+                    <i class="fa fa-hands fa-4x text-dark"></i>
+                    <div class="ms-4">
+                        <h4>Marriage</h4>
+                        <p class="mb-4">Our marriage services provide guidance and support to couples, helping them build strong, harmonious relationships rooted in Islamic principles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- services End -->
+
+<!-- Contact and WhatsApp Section Start -->
+<div class="container-fluid py-5" id="contact">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <p class="fs-3 text-uppercase" style="color: #00964f;">Join Our Community</p> <!-- Centered and adjusted font size -->
+        </div>
+        <div class="row g-5 align-items-center">
+            <!-- Google Map and Contact Info -->
+            <div class="col-lg-6">
+                <div class="mb-4">
+                    <h3>Our Address & Contact</h3>
+                    <p><strong>Address:</strong> 22 Wellmeadow St, Paisley, Renfrewshire PA1 2EE</p>
+                    <p><strong>Phone:</strong> 0141 562 2951</p>
+                </div>
+                <div class="map-wrapper">
+                    <!-- Google Maps Embed -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11353.970618110476!2d-4.475890655615823!3d55.84453866162473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48884945fa2c7105%3A0x5778639076d5d991!2sPaisley%20Central%20Mosque!5e0!3m2!1sen!2suk!4v1693905959343!5m2!1sen!2suk"
+                        width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                        tabindex="0"></iframe>
+                </div>
+            </div>
+
+            <!-- WhatsApp Group Information -->
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+                <div class="text-center">
+                    <h3 class="mb-4">Join Our WhatsApp Group</h3> <!-- Reduced font size to match "Our Address & Contact" -->
+                    <p class="mb-4">Stay connected with updates, events, and resources from the mosque. By joining the WhatsApp group, you'll get direct access to prayer schedules, community events, learning resources, and more!</p>
+                    <div class="qr-code-wrapper mb-4">
+                        <!-- Dummy QR code for now -->
+                        <img src="https://via.placeholder.com/300x300.png?text=QR+Code" class="img-fluid mx-auto d-block" alt="Scan to join WhatsApp Group" style="max-width: 300px;">
+                    </div>
+                    <a href="https://chat.whatsapp.com/your-group-link" class="btn btn-primary py-3 px-5" target="_blank">Click Here to Join via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact and WhatsApp Section End -->
+
+
+
+
+
+
+    
+<!-- Footer Start -->
+<div class="container-fluid footer pt-5 wow fadeIn" data-wow-delay="0.1s" style="background-color: #f5f5f5;">
+    <div class="container py-5">
+        <!-- Newsletter Subscription Section
+        <div class="row py-5 align-items-center">
+            <div class="col-lg-7">
+                <h1 class="text-dark mb-0">Subscribe to our newsletter</h1>
+                <p class="text-secondary">Get the latest news and other tips</p>
+            </div>
+            <div class="col-lg-5">
+                <div class="position-relative mx-auto" style="max-width: 500px;">
+                    <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                    <button type="button" class="btn btn-primary py-2 position-absolute top-50 end-0 translate-middle-y me-2">Subscribe</button>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="border-top border-secondary mt-4"></div>
+            </div>
+        </div> -->
+
+        <!-- Footer Section -->
+
+<!-- Footer Section -->
+<div class="row g-4 footer-inner">
+    <div class="col-md-12 text-center">
+        <div class="footer-item mt-5">
+            <img src="img/icon.png" alt="Paisley Mosque" class="footer-logo mb-3" style="max-width: 150px;">
+        </div>
+    </div>
+</div>
+
+
+
+
+        
+    </div>
+
+    <div class="container py-4">
+        <div class="border-top pb-4" style="border-color: #00964f;"></div> <!-- Updated border color -->
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                &copy; <a class="border-bottom" href="#" style="color: #00964f; border-color: #00964f;">PMCT.com</a>, All Right Reserved. <!-- Updated text and border color -->
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                Designed By <a class="border-bottom" href="https://www.linkedin.com/in/bewithkhan/" style="color: #00964f; border-color: #00964f;">Muhammad Tufail Khan</a> <!-- Updated text and border color -->
+            </div>
+        </div>
+    </div>
+    
+</div>
+<!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary border-3 border-light back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
