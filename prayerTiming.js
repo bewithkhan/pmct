@@ -237,7 +237,7 @@ function setNextIqamah(prayerTimes) {
             }
         } catch (error) {
             console.error('Error fetching the Hadith:', error);
-            document.getElementById('hadith-text').innerHTML = `<p>Unable to fetch hadith at this time.</p>`;
+            document.getElementById('hadith-text').innerHTML = `<p>Do not have ill-will towards one another, do not be envious of one another, do not turn your back on one another; O, servants of Allah, be brothers (and sisters). It is not permissible for a Muslim to remain angry with their brother [in religion] for more than three days.[Bukhari, Al-Adab (Good Manners); 57-58]</p>`;
         }
     }
     
