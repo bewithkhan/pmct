@@ -81,26 +81,28 @@ async function setCurrentDate() {
                     // Update the prayer times in the table
                     document.getElementById('suhur-time').textContent = prayerTimes.Fajr;  // Suhur time is Fajr
                     document.getElementById('iftar-time').textContent = prayerTimes.Maghrib;  // Iftar time is Maghrib
-                    document.getElementById('sunrise-time').textContent = prayerTimes['Sunrise'];  // Sunrise time
-                    document.getElementById('sunset-time').textContent = prayerTimes.Maghrib;  // Sunset time
+                    document.getElementById('sunrise-time').textContent = prayerTimes.Sunrise;  // Sunrise time
+                    document.getElementById('sunset-time').textContent = prayerTimes.Sunset;  // Sunset time
                     document.getElementById('fajr-time').textContent = prayerTimes.Fajr;
                     document.getElementById('fajr-iqamah').textContent = prayerTimes['Fajr_iqama'];
-                    document.getElementById('dhuhr-time').textContent = prayerTimes.Duhar;
-                    document.getElementById('dhuhr-iqamah').textContent = prayerTimes['Duhar_iqama'];
+                    document.getElementById('dhuhr-time').textContent = prayerTimes.Dhuhr;  // Corrected from Duhar
+                    document.getElementById('dhuhr-iqamah').textContent = prayerTimes['Dhuhr_iqama'];  // Corrected from Duhar_iqama
                     document.getElementById('asr-time').textContent = prayerTimes.Asr;
                     document.getElementById('asr-iqamah').textContent = prayerTimes['Asr_iqama'];
                     document.getElementById('maghrib-time').textContent = prayerTimes.Maghrib;
                     document.getElementById('maghrib-iqamah').textContent = prayerTimes['Maghrib_iqama'];
                     document.getElementById('isha-time').textContent = prayerTimes.Isha;
                     document.getElementById('isha-iqamah').textContent = prayerTimes['Isha_iqama'];
-
+                
                     // Jumu'ah handling
                     document.getElementById('jumuah-time').textContent = prayerTimes.Jumuah || '01:17 PM';  // Default time if not present
                     document.getElementById('jumuah-iqamah').textContent = prayerTimes['Jumuah_iqama'] || '02:00 PM'; // Default time if not present
-
+                
                     // Set next prayer dynamically
                     setNextIqamah(prayerTimes);
-                } else {
+                }
+                
+                 else {
                     console.error('No prayer time data found for today.');
                 }
             } else {
