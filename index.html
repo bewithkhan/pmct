@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    <script src="./prayerTiming.js"></script>
 
 <head>
     <meta charset="utf-8">
     <title>PMCT - Paisley Mosque</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description"> 
+    <meta content="Paisley Mosque prayer timings, community services, donations" name="keywords">
+    <meta content="Official website for Paisley Muslim Community Trust (PMCT), providing daily prayer times and community services." name="description">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,6 +27,7 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
+    <!-- Main JavaScript -->
 </head>
 
 <body>
@@ -47,11 +47,11 @@
                     </div>
                 </div>
                 <div>
-                    <a href="https://www.google.com/maps/place/Paisley+Central+Mosque/@55.8445387,-4.4758907,13z/data=!4m10!1m2!2m1!1spasiley+mosque!3m6!1s0x48884945fa2c7105:0x5778639076d5d991!8m2!3d55.8445387!4d-4.434692!15sCg5wYXNpbGV5IG1vc3F1ZVoQIg5wYXNpbGV5IG1vc3F1ZZIBBm1vc3F1ZZoBI0NoWkRTVWhOTUc5blMwVkpRMEZuU1VOV2IyVklMVXBuRUFF4AEA!16s%2Fg%2F12hnwp8bg?entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-primary btn-sm">Location</a>
+                    <a href="https://goo.gl/maps/XJPLfE3fPrczZmcDA" target="_blank" class="btn btn-primary btn-sm">Location</a>
                 </div>
-                
             </div>
         </div>
+
         <div class="container">
             <nav class="navbar navbar-light navbar-expand-lg py-3">
                 <a href="index.html" class="navbar-brand">
@@ -69,7 +69,6 @@
                     </div>
                     <a href="#donate" class="btn btn-primary py-2 px-4 d-none d-xl-inline-block">Donate</a>
                 </div>
-                
             </nav>
         </div>
     </div>
@@ -89,164 +88,133 @@
         });
     </script>
 
-<!-- Hero Start -->
-<div class="container-fluid hero-header" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-    <div class="container text-center">
-        <div class="row">
-            <!-- Hero Text Section -->
-            <div class="col-lg-12">
-                <div class="hero-header-inner animated zoomIn">
-                    <!-- Adjust the size of both the Welcome and Purity text -->
-                    <h1 class="display-4 mb-5 text-dark">PAISLEY MUSLIM COMMUNITY TRUST</h1>
+    <!-- Hero Start -->
+    <div class="container-fluid hero-header" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hero-header-inner animated zoomIn">
+                        <h1 class="display-4 mb-5 text-dark">PAISLEY MUSLIM COMMUNITY TRUST</h1>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Hero End -->
+
+    <!-- Prayer Schedule and Verse/Hadith Section -->
+    <div class="container-fluid py-5" id="prayer-schedule">
+        <div class="container py-5">
+            <div class="row">
+                <!-- Verse and Hadith of the Day Section -->
+                <div class="col-lg-6">
+                    <div class="verse-hadith">
+                        <h2>Verse of the Day</h2>
+                        <blockquote id="verse-text">
+                            <p>Loading verse...</p>
+                            <footer>- Quran</footer>
+                        </blockquote>
+
+                        <h2>Hadith of the Day</h2>
+                        <blockquote id="hadith-text">
+                            <p>Loading hadith...</p>
+                            <footer>- Hadith</footer>
+                        </blockquote>
+                    </div>
+                    <!-- Jumma'ah Times Section -->
+                    <div class="jummah-times">
+                        <p>First Jumma'ah starts at 01:30 PM</p>
+                        <p>Second Jumma'ah starts at 02:30 PM</p>
+                    </div>
+                </div>
+
+                <!-- Prayer Schedule Section -->
+                <div class="col-lg-6">
+                    <div class="prayer-schedule">
+                        <div class="header d-flex justify-content-between align-items-center">
+                            <h2 class="text-muted">Prayers Times</h2>
+                            <div class="d-flex align-items-center">
+                                <button id="prev-date" class="btn-icon btn-outline-primary-custom">
+                                    <i class="arrow-icon fas fa-chevron-left"></i>
+                                </button>
+                                <div id="date-section" class="mx-2 text-center">
+                                    <span id="current-day">Wednesday, September 4, 2024</span>
+                                    <br>
+                                    <span id="islamic-date" class="text-muted">Hijri Date</span>
+                                </div>
+                                <button id="next-date" class="btn-icon btn-outline-primary-custom">
+                                    <i class="arrow-icon fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="next-iqamah bg-light p-3 rounded d-flex justify-content-between align-items-center mt-4">
+                            <button class="btn btn-primary" onclick="location.href='monthlyPrayer.html'">Month Prayer Time</button>
+                        </div>
+
+                        <div class="row text-center mt-4">
+    <div class="col">
+        <div class="info-item card p-2">
+            <img src="./img/sunrise.png" alt="Sunrise" />
+            <span class="info-title">Sunrise</span>
+            <span id="sunrise-time" class="info-time">Loading...</span> <!-- Will be updated by JS -->
+        </div>
+    </div>
+    <div class="col">
+        <div class="info-item card p-2">
+            <img src="./img/sunset.png" alt="Sunset" />
+            <span class="info-title">Sunset</span>
+            <span id="sunset-time" class="info-time">Loading...</span> <!-- Will be updated by JS -->
+        </div>
+    </div>
 </div>
 
-<!-- Hero End -->
-<!-- Prayer Schedule and verse hadith Section -->
-<div class="container-fluid py-5" id="prayer-schedule">
-    <div class="container py-5">
-        <div class="row">
-            <!-- Verse and Hadith of the Day Section -->
-<div class="col-lg-6">
-    <div class="verse-hadith">
-        <h2>Verse of the Day</h2>
-        <blockquote id="verse-text">
-            <p>Loading verse...</p>
-            <footer>- Quran</footer>
-        </blockquote>
-
-        <h2>Hadith of the Day</h2>
-        <blockquote id="hadith-text">
-            <p>Loading hadith...</p>
-            <footer>- Hadith</footer>
-        </blockquote>
-    
-    </div>
-    <!-- Jumma'ah Times Section -->
-    <div class="jummah-times">
-        <p>First Jumma'ah starts at 01:30 PM</p>
-        <p>Second Jumma'ah starts at 02:30 PM</p>
-    </div>
-</div>
-
-
-            <!-- Prayer Schedule Section -->
-            <div class="col-lg-6">
-                <div class="prayer-schedule">
-                    <div class="header d-flex justify-content-between align-items-center">
-                        <h2 class="text-muted">Prayers Times</h2>
-                        <div class="d-flex align-items-center">
-                            <button id="prev-date" class="btn-icon btn-outline-primary-custom">
-                                <i class="arrow-icon fas fa-chevron-left"></i>
-                            </button>
-                            <div id="date-section" class="mx-2 text-center">
-                                <span id="current-day">Wednesday, September 4, 2024</span>
-                                <br>
-                                <span id="islamic-date" class="text-muted">Hijri Date</span>
-                            </div>
-                            <button id="next-date" class="btn-icon btn-outline-primary-custom">
-                                <i class="arrow-icon fas fa-chevron-right"></i>
-                            </button>
-                        </div>
+<table class="prayer-times-table table mt-4">
+    <thead>
+        <tr>
+            <th>Prayer Name</th>
+            <th>Prayer Time</th>
+            <th>Iqamah Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Fajr</td>
+            <td id="fajr-time">Loading...</td> <!-- Will be updated by JS -->
+            <td id="fajr-iqamah">Loading...</td> <!-- Will be updated by JS -->
+        </tr>
+        <tr>
+            <td>Dhuhr</td>
+            <td id="dhuhr-time">Loading...</td> <!-- Will be updated by JS -->
+            <td id="dhuhr-iqamah">Loading...</td> <!-- Will be updated by JS -->
+        </tr>
+        <tr>
+            <td>Asr</td>
+            <td id="asr-time">Loading...</td> <!-- Will be updated by JS -->
+            <td id="asr-iqamah">Loading...</td> <!-- Will be updated by JS -->
+        </tr>
+        <tr>
+            <td>Maghrib</td>
+            <td id="maghrib-time">Loading...</td> <!-- Will be updated by JS -->
+            <td id="maghrib-iqamah">Loading...</td> <!-- Will be updated by JS -->
+        </tr>
+        <tr>
+            <td>Isha</td>
+            <td id="isha-time">Loading...</td> <!-- Will be updated by JS -->
+            <td id="isha-iqamah">Loading...</td> <!-- Will be updated by JS -->
+        </tr>
+        <tr>
+            <td>Jumu'ah</td>
+            <td id="jumuah-time">01:17 PM</td> <!-- Will be updated by JS -->
+            <td id="jumuah-iqamah">02:30 PM</td> <!-- Will be updated by JS -->
+        </tr>
+    </tbody>
+</table>
                     </div>
-                    
-                    <!-- <div class="next-iqamah bg-light p-3 rounded d-flex justify-content-between align-items-center mt-4">
-                        <span class="text-muted">Next Iqamah</span>
-                        <div>
-                            <strong id="next-prayer-name">Dhuhr</strong>
-                            <span>at <strong id="next-prayer-time">22:00 PM</strong></span>
-                        </div>
-                    </div> -->
-                    <div class="next-iqamah bg-light p-3 rounded d-flex justify-content-between align-items-center mt-4">
-                        <!-- <span class="text-muted">Next Iqamah</span>
-                        <div>
-                            <strong id="next-prayer-name">Dhuhr</strong>
-                            <span>at <strong id="next-prayer-time">22:00 PM</strong></span>
-                        </div> -->
-                        <button class="btn btn-primary" onclick="location.href='monthlyPrayer.html'">Month Prayer Time</button>
-                    </div>
-                    
-                    <div class="row text-center mt-4">
-                        <!-- <div class="col">
-                            <div class="info-item card p-2">
-                                <img src="./img/suhoor.png" alt="Suhur" />
-                                <span class="info-title">Suhur</span>
-                                <span id="suhur-time" class="info-time">05:00 AM</span>
-                            </div>
-                        </div> -->
-                        <div class="col">
-                            <div class="info-item card p-2">
-                                <img src="./img/sunrise.png" alt="Sunrise" />
-                                <span class="info-title">Sunrise</span>
-                                <span id="sunrise-time" class="info-time">05:29 AM</span>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="info-item card p-2">
-                                <img src="./img/sunset.png" alt="Sunset" />
-                                <span class="info-title">Sunset</span>
-                                <span id="sunset-time" class="info-time">07:03 PM</span>
-                            </div>
-                        </div>
-                        <!-- <div class="col">
-                            <div class="info-item card p-2">
-                                <img src="./img/iftar.png" alt="Iftar" />
-                                <span class="info-title">Iftar</span>
-                                <span id="iftar-time" class="info-time">18:04 PM</span>
-                            </div>
-                        </div> -->
-                    </div>
-                    
-
-                    <table class="prayer-times-table table mt-4">
-                        <thead>
-                            <tr>
-                                <th>Prayer Name</th>
-                                <th>Prayer Time</th>
-                                <th>Iqamah Time</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Fajr</td>
-                                <td id="fajr-time">05:00 AM</td>
-                                <td id="fajr-iqamah">05:30 AM</td>
-                             </tr>
-                             <tr>
-                                <td>Dhuhr</td>
-                                <td id="dhuhr-time">01:17 PM</td>
-                                <td id="dhuhr-iqamah">02:00 PM</td>
-                             </tr>
-                             <tr>
-                                <td>Asr</td>
-                                <td id="asr-time">04:55 PM</td>
-                                <td id="asr-iqamah">05:15 PM</td>
-                             </tr>
-                             <tr>
-                                <td>Maghrib</td>
-                                <td id="maghrib-time">08:04 PM</td>
-                                <td id="maghrib-iqamah">08:04 PM</td>
-                             </tr>
-                             <tr>
-                                <td>Isha</td>
-                                <td id="isha-time">09:32 PM</td>
-                                <td id="isha-iqamah">10:00 PM</td>
-                             </tr>                             
-                            <tr>
-                                <td>Jumu'ah</td>
-                                <td id="jumuah-time..">1st Jumuah 01:30 PM</td>
-                                <td id="jumuah-iqamah..">2nd Jumuah 02:30 PM</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
         </div>
     </div>
-</div>
 <!-- End Prayer Schedule Section -->
 
 
@@ -562,7 +530,7 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary border-3 border-light back-to-top"><i class="fa fa-arrow-up"></i></a>
 
-    <!-- JavaScript Libraries -->
+     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
@@ -572,6 +540,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <!-- Ensure prayerTiming.js is loaded after all elements are available -->
+    <script src="js/prayerTiming.js"></script>
 </body>
-
 </html>
